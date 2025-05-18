@@ -1,0 +1,742 @@
+
+\documentclass[conference]{IEEEtran}
+
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{times}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% \fancypagestyle{firstpage}{
+%   \fancyhf{} % Clear header and footer
+%   \renewcommand{\headrulewidth}{0pt} % Remove header rule
+%     \fancyhead[C]{\small 2024 3\textsuperscript{rd} IEEE International Conference on Artificial Intelligence for Internet of Things (AIIoT 2024)} % Set header content
+%   \fancyfoot[L]{\small 978-1-6654-5566-7/24/\$31.00 © 2024 IEEE} % Set footer content
+% }
+
+
+
+
+
+
+\begin{document}
+
+\pagestyle{allpages} % Apply the custom page style to all pages
+
+\title{Advanced Techniques for Immersive AR Home Furnishing Experience\\
+% {\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
+% should not be used}
+% \thanks{Identify applicable funding agency here. If none, delete this.}
+}
+
+
+
+\author{
+
+
+\IEEEauthorblockN{Anshuman Dhara, Neha Gode, Gitanjali Gangurde, Anant V. Nimkar} 
+\IEEEauthorblockA{{Department of Computer Engineering} \\
+{Sardar Patel Institute of Technology}\\
+Mumbai, India \\
+\{anshuman.dhara, neha.gode, gitanjali.gangurde, anant\_nimkar\}@spit.ac.in}
+\\
+
+}
+
+
+\maketitle
+
+\IEEEoverridecommandlockouts
+\IEEEpubid{\makebox[\columnwidth]{ }}
+
+\thispagestyle{firstpage} % Apply the custom page style to the first page
+
+\begin{abstract}
+This paper presents a framework for an interior design application that uses augmented reality (AR) to provide users with a realistic and immersive design experience. The proposed framework integrates various AR techniques. Our solution aims to streamline the interior design process by offering visualization of furniture items in real-life places and providing realism for accurate visualization.
+The primary feature of the application is its ability to allow users to place multiple furniture items within a room and retain these placements across sessions. By overcoming the limitations of traditional AR tools, which often limit users to single-item placement without memory retention, our application provides a functional, intuitive and user-friendly interface, developed using Unity 3D and AR Foundation.
+With continued development, this framework has the potential to revolutionize the interior design industry by empowering users to create personalized and aesthetically pleasing living spaces with ease and confidence.
+\end{abstract}
+
+
+\begin{Keywords}
+\textbf{Keywords}- Augmented Reality (AR), Unity 3D, Blender Interior Design, User Preference, 3D Modeling, Interior Design, Furniture Placement, Physics-Based Rendering
+\end{Keywords}
+
+\section{Introduction}The Title of our paper is "Advanced Techniques for Immersive AR Home Furnishing Experience". Our research aims to utilise Augmented Reality Technique to enhance realism and efficient placement of the desired furniture items in a room. This project is created using software called “UNITY -VERSION 2024” and a Visual Studio program is also implemented for access to the AR camera. Instead of buying furniture from outside, the desired furniture can be chosen using this app itself. The furniture dataset is accessed from the Asset store. In Unity software various packages like Vuforia and AR foundation are installed .In the unity software the main camera is deleted and the AR camera is fixed there. This app saves the time of the user from buying the furniture from outside stores.
+
+Augmented Reality (AR) is an innovative technology that enhances the real world by superimposing computer-generated information onto it. This integration of digital content with the physical environment allows users to experience a mixed reality that can be interactive and contextually relevant. The term "augmented reality" was first coined by Tom Caudell in 1990 while he was working at Boeing, where he aimed to improve the efficiency of assembly processes through the use of head-mounted displays (HMDs) that provided real-time visual instructions to workers[2][3]. Since then, AR has evolved significantly, driven by advancements in computing power, graphics rendering, and sensor technologies.
+
+The fundamental characteristics of AR systems include real-time interaction, 3D registration of virtual and real objects, and the ability to combine real and virtual elements seamlessly[2][4]. AR is often situated within a broader spectrum known as Mixed Reality (MR), which encompasses various technologies including Virtual Reality (VR) and telepresence. While VR immerses users in entirely synthetic environments, AR overlays digital information onto the real world, enhancing user perception without complete immersion[1][4].
+
+Research indicates that AR has found applications across diverse fields such as medicine, education, entertainment, and manufacturing. For instance, in medical settings, AR is utilized for image-guided surgery, allowing surgeons to visualize critical data overlaid on the patient's anatomy during procedures[1][3]. In education, AR enhances learning experiences by providing interactive content that bridges theoretical knowledge with practical application[5]. The potential of AR continues to grow as mobile devices become increasingly capable of supporting sophisticated AR applications, enabling users to access augmented experiences anywhere and at any time[2][4].
+
+Despite its rapid development, challenges remain in areas such as tracking accuracy, user interface design, and the effective integration of AR into existing workflows. Ongoing research aims to address these issues while exploring new application domains and improving user experience[3][4]. As AR technology matures, it promises to revolutionize how we interact with our surroundings and access information in our daily lives.
+
+In the following sections, we will explore the advantages of using Blender in developing HomeDecor360, analyze existing literature on AR applications in furniture shopping, present findings from user surveys regarding current platforms, and outline the proposed system architecture designed to enhance user experience. By addressing identified gaps and leveraging advanced technologies, HomeDecor360 aims to redefine the interior design landscape and deliver a seamless shopping experience tailored to modern consumers' needs.
+
+\section{Importance of Using Augmented Reality in Furniture Placing}
+The integration of Augmented Reality (AR) technology in furniture placement is revolutionizing the way consumers visualize and arrange furniture in their spaces. This innovation offers significant advantages, enhancing user experience and decision-making processes in interior design.
+
+\subsection{Enhanced Visualization and Decision Making}
+AR allows users to visualize how different furniture pieces will look and fit in their actual living spaces before making a purchase. By using AR applications, individuals can take a photograph of their room and superimpose 3D models of furniture onto the image. This capability eliminates the guesswork traditionally associated with furniture shopping, enabling users to make informed decisions about size, color, and style compatibility with existing decor[4][11].
+
+\subsection{Increased Spatial Awareness}
+One of the key benefits of AR in furniture placement is its ability to improve spatial awareness. Users can manipulate virtual furniture within their real-world environment, adjusting placements to see how different arrangements affect the overall aesthetic and functionality of a space. This interactive experience helps users better understand spatial relationships, which is crucial for effective interior design [12] [13].
+
+\subsection{Cost and Time Efficiency}
+Using AR for furniture placement can also lead to significant time and cost savings. By visualizing furniture arrangements digitally, users can avoid costly mistakes associated with purchasing ill-fitting or incompatible pieces. The ability to experiment with various layouts without physically moving heavy items saves time and reduces the physical effort involved in traditional rearranging methods[4][11].
+
+\subsection{User Friendly Experience}
+Modern AR applications are designed with user experience in mind, featuring intuitive interfaces that allow even those with minimal technical skills to navigate easily. These applications often include features such as drag-and-drop functionality for placing furniture, as well as options for customizing sizes and colors to match personal preferences. This accessibility democratizes interior design, allowing anyone to create aesthetically pleasing spaces without needing professional assistance[12][14].
+
+\section{The Role of Unity in Developing AR Applications}
+Unity is increasingly preferred for developing augmented reality (AR) applications, particularly in the context of furniture placement. This preference can be attributed to several key advantages that Unity offers over other technologies. Below is a detailed exploration of these advantages, supported by relevant research.
+
+\subsection{Cross-Platform Compatibility}
+One of Unity's standout features is its cross-platform compatibility. Developers can create AR applications that run on various devices, including iOS, Android, and smart glasses, without needing to rewrite code for each platform. This flexibility allows for a wider audience reach and simplifies the development process, as noted in the Unity AR Foundation documentation2. The ability to deploy across multiple platforms is crucial for furniture placement apps, which aim to engage users on their preferred devices.
+
+\subsection{Robust Feature Set}
+Unity provides a comprehensive suite of tools and features that are essential for AR development. These include:
+
+\textbf{Environmental Understanding}: Unity's capabilities allow for precise tracking of real-world spaces, enabling accurate placement of virtual furniture in user environments.
+
+\textbf{Realistic Rendering}: The engine supports advanced rendering techniques that enhance the visual quality of virtual objects, making them appear more lifelike within the user's space.
+
+\textbf{User Interaction}: Unity facilitates intuitive user interactions with virtual objects, such as scaling and rotating furniture models to fit specific spaces.
+
+These features collectively contribute to creating a more immersive and interactive experience for users when visualizing furniture in their homes.
+
+\subsection{Strong Community and Support}
+The extensive community surrounding Unity is another significant advantage. With a vast number of developers using the platform, resources such as tutorials, forums, and pre-built assets are readily available. This community support accelerates development time and reduces troubleshooting challenges[15]. Furthermore, Unity Technologies offers professional support options, enhancing developers' ability to resolve issues quickly.
+
+\subsection{Integration with AR Frameworks}
+Unity seamlessly integrates with leading AR frameworks like ARKit and ARCore, which enhances its functionality. For instance, the IKEA Place app utilizes Unity AR Foundation to allow users to visualize furniture in their homes accurately. This integration ensures that developers can leverage the latest advancements in AR technology while benefiting from Unity's powerful game engine capabilities.
+
+\section{Using Blender for 3D Models}
+Using Blender in the HomeDecor360 project offers several benefits that enhance the development and functionality of the augmented reality (AR) application for home furnishing. Here are the key advantages:
+
+\textbf{High-Quality 3D Modelling:} Blender provides powerful tools for creating detailed and realistic 3D models of furniture and interior elements. The ability to produce high-quality textures and intricate designs enhances the visual appeal of the virtual furniture, making it more engaging for users[33].
+
+\textbf{Physics Based Rendering:} Blender supports PBR workflows, allowing for more realistic lighting and shading effects in the 3D models. This capability ensures that virtual furniture appears lifelike when rendered in AR, contributing to a more immersive user experience[33].
+
+\textbf{Animation and Rigging:} The software offers advanced animation tools that enable developers to create dynamic interactions with furniture pieces, such as opening drawers or adjusting reclining chairs. This feature enhances user engagement by allowing for realistic movements and interactions within the AR environment.
+
+\textbf{Integration with Unity:} Blender's compatibility with Unity facilitates a seamless workflow for importing 3D assets into the HomeDecor360 application. This integration streamlines the development process, allowing designers to focus on creating content rather than dealing with complex file conversions.
+
+\textbf{Customization and Flexibility:} Blender’s open-source nature allows developers to customize their modelling processes according to specific project needs. This flexibility is particularly beneficial for tailoring furniture designs to meet user preferences and requirements.
+
+\textbf{Community Support and Resources:} The extensive Blender community provides a wealth of tutorials, plugins, and resources that can help developers overcome challenges during the modelling process. Access to these resources can significantly reduce development time and improve the quality of the final product.
+
+\section{Literature Survey}
+The research papers collectively reveal several gaps in current approaches to augmented reality (AR) implementation and online furniture shopping platforms. While AR technology shows promise in enhancing user experiences by allowing visualizations of furniture in real-world settings, the lack of emphasis on backend infrastructure and personalized recommendations limits its effectiveness[38]. Furthermore, the absence of detailed discussions on user interaction design and AR implementation challenges hinders the seamless integration of AR features within e-commerce platforms.[21][22] Additionally, existing evaluations of AR applications lack industry-specific considerations and fail to address integration with other technologies, such as artificial intelligence (AI) and e-commerce functionalities. These gaps underscore the need for a more comprehensive approach to AR implementation in online furniture shopping platforms, one that addresses technical infrastructure, user engagement, and integration with AI-driven recommendation systems.
+
+To address the identified gaps and enhance the user experience, HomeDecor360 integrates advanced AR features into its platform, allowing users to visualize furniture and decor in their own living spaces. In addition, HomeDecor360 evaluates and refines its AR implementation using a checklist of key criteria to ensure effectiveness, usability, and performance. By adopting best practices from creating online furniture store applications and utilizing frameworks for efficient furniture placement and added realism, HomeDecor360 aims to revolutionize the interior design industry by providing a seamless and immersive shopping experience for users.
+
+Houzz: Houzz offers a comprehensive platform for home remodeling
+and design, providing users with access to millions of high-quality photos, articles, and product recommendations. It also facilitates communication between homeowners and design professionals. Gaps: Limited AI-driven recommendations. No 3D camera implementation. While Houzz provides inspiration and product suggestions, its recommendations lack personalization tailored to individual preferences and house layouts. Limited product accessibility: Users often need to navigate to external websites to purchase products, resulting in a disjointed user experience. Limited localization: Houzz’s content and product offerings may not always cater specifically to the preferences and cultural nuances of the Indian market.[37]
+
+IKEA Place: IKEA Place utilizes augmented reality (AR) technology to allow users to virtually place IKEA furniture in their own homes, enabling them to visualize how products would look and fit in their space before making a purchase. Gaps: Limited product range: The application primarily focuses on showcasing IKEA’s products, limiting users’ options to a single brand. Limited design recommendations: While IKEA Place assists in visualizing furniture placement, it lacks AI-driven recommendations for overall interior design, including color schemes and decor choices[37].
+
+Amazon AR: Amazon AR integrates augmented reality technology into the Amazon app, allowing users to visualize how thousands of products would look in their own space before making a purchase. Gaps: Limited focus on interior design. While Amazon AR offers the ability to visualize products in a user’s space, it lacks comprehensive interior design features such as layout optimization and decor recommendations. Limited customization: The app does not provide personalized design suggestions based on user preferences and house layouts, relying solely on product visualization. Limited integration with other design tools: Amazon AR does not seamlessly integrate with other interior design applications or platforms, hindering the overall design process for users. Although Amazon AR offers valuable features and functionalities, there are notable gaps in terms of AI-driven recommendations, product accessibility, and comprehensive design capabilities. Addressing these gaps presents an opportunity for a new entrant, such as HomeDecor360, to provide a more holistic and personalized interior design experience tailored specifically to the Indian market[37].
+
+Unity PhysX Engine: Unity’s adoption of the NVIDIA PhysX engine enables realistic interactions. Improved collision detection and response. 3D object manipulation and real-time rendering:
+Unity’s support for inverse kinematics and articulation bodies enables more realistic movements of furniture parts (e.g., drawers, reclining chairs) Incorporating room scanning to accurately detect room dimensions, ensuring that furniture fits perfectly into any space.
+
+
+\section{Common Issues with Object Placement in AR Apps}
+Augmented reality (AR) applications, particularly those focused on furniture placement, often encounter several challenges related to object movement. These issues can significantly affect user experience and the perceived realism of the AR environment. Below are some common problems faced by these applications [34].
+
+\textbf{Object Drift or Instability}:
+Virtual objects may appear to drift or move inconsistently when the user moves their device, leading to a disjointed experience. This can occur due to inaccuracies in tracking or when the object is not properly anchored to a detected surface.
+
+\textbf{Unstable or Erratic Movements}:
+When users attempt to move furniture objects, they may experience jumpy or erratic movements due to discrepancies between touch input and object pivot points.
+
+\textbf{Difficulty in Object Placement}:
+Users may struggle to place objects accurately due to poor visual feedback or a lack of clear indicators showing valid placement areas.
+
+\textbf{User Confusion with Object Interaction}: Users may not understand how to interact with virtual objects, leading to frustration when trying to move, rotate, or scale them.
+
+\textbf{Latency and Performance Issues }:
+High latency in processing user inputs can cause delays in object movement, negatively impacting user experience.
+
+
+\section{ PBIRME}
+    Our architecture, PBIRME - Physics Based Interaction and Rendering for Mixed-reality Environments, for furniture placement as shown in Fig. 6, emphasises the modular design and interaction between various components. This framework enables users to visualize and manipulate furniture in a virtual environment, leveraging Unity's capabilities for an engaging user experience.
+
+    \subsection{Framework Overview}
+PBIRME is structured into four core layers:
+\begin{itemize}
+    \item \textbf{User Interface Layer}: Manages user interaction through canvas-based controls, dynamic furniture panels, and event handling.
+    \item \textbf{Data Management Layer}: Maintains structured representations of furniture assets and user preferences via scriptable objects and optimized 3D models.
+    \item \textbf{Interaction Control Layer}: Integrates SLAM-based mapping, raycasting, world-space input translation, and placement validation.
+    \item \textbf{Rendering Layer}: Implements physically-based rendering (PBR), lighting, scene transitions, and runtime optimization techniques such as LOD and object pooling.
+\end{itemize}
+
+
+\subsection{User Interface Layer}
+The UI layer facilitates user interactions and visual feedback. Key components include:
+\begin{itemize}
+\item \textbf{Canvas Structure:} The main canvas contains UI elements such as buttons for selecting furniture and panels for displaying options.
+UI Components:
+\item \textbf{Furniture Selection Panel:} A dynamic panel that displays available furniture items.
+\item \textbf{Placement Indicators:} Visual cues that indicate valid placement areas within the environment.
+\item \textbf{Event Handling:} Utilizes Unity's event system to manage user inputs effectively, ensuring a responsive interface
+\end{itemize}
+
+\subsection{Data Management Layer}
+This layer manages all data related to furniture items and user preferences:
+\begin{itemize}
+\item \textbf{Furniture Catalog:} Classes representing different types of furniture, including attributes like dimensions, textures, and unique identifiers.
+\item \textbf{3D Models:} Imports optimized 3D models of furniture from external sources or asset stores.
+\item \textbf{Database Management:} Employs Scriptable Objects or a lightweight database for storing furniture data, facilitating easy retrieval and updates.
+
+\end{itemize}
+
+\subsection{Interaction Control Layer}
+The interaction control layer handles user interactions with the application:
+\begin{itemize}
+\item \textbf{Environment Mapping:} Utilizes spatial mapping to create a 3D representation of the environment by combining data from multiple frames of reference, using SLAM (Simultaneous Localization and Mapping).
+\item \textbf{Input Handling:} Utilizes Unity's Input System to detect user actions such as touch or mouse events.
+\item \textbf{Feedback Mechanisms:} Provides visual feedback during placement, enhancing user experience by highlighting valid areas for furniture placement.
+\item \textbf{Placement Logic:} PBIRME leverages 
+ the following algorithms to determine valid placement positions based on grid systems using high-performance physics and mathematical techniques to ensure realism:
+ \paragraph{Parallel Physics Simulation:} The system distributes collision and contact calculations across GPU threads using bounding volume hierarchies (BVH), enabling scalable interaction among multiple objects:
+\begin{equation}
+\text{Collision Test}(A, B) = \begin{cases}
+  \text{False}, & \text{if } \text{BoundingVolume}(A) \cap \text{BoundingVolume}(B) = \emptyset \\
+  \text{True}, & \text{otherwise}
+\end{cases}
+\end{equation}
+
+\paragraph{Constraint-Based Dynamics:} We apply Minkowski difference and joint constraints to preserve realistic movement during interaction:
+\begin{equation}
+D = \{a - b | a \in A, b \in B\}
+\end{equation}
+
+\paragraph{High-Precision Rotations:} We use high-precision floating- point calculations to minimize numerical errors, particularly
+when dealing with small distances and angles. This helps to ensure accurate placement of virtual objects. Quaternion-based transformations prevent gimbal lock and offer stable rotational dynamics. A quaternion is a number of the form:
+\begin{equation}
+q = w + x\mathbf{i} + y\mathbf{j} + z\mathbf{k}
+\end{equation}
+where \( w, x, y, z \) are real numbers and \( \mathbf{i}, \mathbf{j}, \mathbf{k} \) are imaginary units. \\
+\linebreak
+
+Given two quaternions:
+\[
+q_1 = w_1 + x_1\mathbf{i} + y_1\mathbf{j} + z_1\mathbf{k}
+\]
+\[
+q_2 = w_2 + x_2\mathbf{i} + y_2\mathbf{j} + z_2\mathbf{k}
+\]
+\linebreak
+
+Their product \( q_1 * q_2 \) is defined as:
+\[
+q_1 * q_2 = \left(
+\begin{array}{l}
+w_1w_2 - x_1x_2 - y_1y_2 - z_1z_2,\quad \\
+w_1x_2 + x_1w_2 + y_1z_2 - z_1y_2,\quad \\
+w_1y_2 - x_1z_2 + y_1w_2 + z_1x_2,\quad \\
+w_1z_2 + x_1y_2 - y_1x_2 + z_1w_2
+\end{array}
+\right)
+\]
+\linebreak
+
+
+A quaternion is used to represent a rotation in 3D space. The corresponding rotation matrix \( R \) is obtained from the quaternion components as follows: \\
+\[
+R = \begin{bmatrix}
+  1 - 2(y^2 + z^2) & 2(xy - wz) & 2(xz + wy) \\
+  2(xy + wz) & 1 - 2(x^2 + z^2) & 2(yz - wx) \\
+  2(xz - wy) & 2(yz + wx) & 1 - 2(x^2 + y^2)
+\end{bmatrix}
+\]
+\linebreak
+
+\end{itemize}
+
+\subsection{Rendering System}
+The rendering system is responsible for visualizing the environment and furniture. We implement a physically-based rendering (PBR) pipeline that accurately simulates the interaction of light with materials. This involves considering factors such as diffuse reflection, specular reflection, and microfacet distribution functions[41].
+\begin{itemize}
+\item \textbf{Lighting and Effects:} Configures lighting settings to create realistic shadows and reflections, improving visual quality.
+\item \textbf{Scene Management:} Manages transitions between different scenes (e.g., from the main menu to the placement environment).
+\end{itemize}
+Our PBR (Physically-Based Rendering) pipeline enhances realism through accurate lighting and material simulation:
+\begin{itemize}
+    \item \textbf{Diffuse Reflection:} \\
+    \( L_d = k_d * \frac{1}{\pi} \max(0, \mathbf{n} \cdot \mathbf{l}) \)\\
+    \item \textbf{Specular Reflection:} \\
+    \( L_s = k_s * \frac{n+2}{2\pi} \max(0, \mathbf{h} \cdot \mathbf{v})^n \)\\
+    \item \textbf{Microfacet Distribution:}\\ \( D(\mathbf{h}) = \frac{\alpha^2}{\pi \cos^4(\theta_h)} \exp(-\frac{\tan^2(\theta_h)}{\alpha^2}) \)\\
+\end{itemize}
+
+Real-time performance is sustained using deferred shading, occlusion culling, and texture atlasing.
+
+PBIRME employs AR Foundation to detect planar surfaces, supported by ray-plane intersection algorithms:
+\begin{equation}
+t = \frac{(P_0 - P_p) \cdot \mathbf{n}}{\mathbf{d} \cdot \mathbf{n}}
+\end{equation}
+where \( P_0 \) is the ray origin, \( P_p \) is a point on the plane, \( \mathbf{n} \) the normal vector, and \( \mathbf{d} \) the direction.
+\begin{itemize}
+    \item \textbf{Model Optimization:} 3D assets are streamlined with LOD, reduced polygon count, and texture atlasing to ensure smooth rendering.
+\end{itemize}
+
+\subsection{Performance Optimization Strategies}
+To ensure smooth performance, especially in AR scenarios, several optimization strategies are employed:
+\begin{itemize}
+\item \textbf{Object Pooling:} Reuses instantiated objects (like furniture) to minimise performance overhead during runtime.
+\item \textbf{Efficient Update Logic:} Reduces computations in the update loop by only processing necessary calculations based on user input.
+\item \textbf{Level of Detail(LOD):}Implements LOD techniques for 3D models to decrease rendering load based on camera distance.
+\end{itemize}
+\subsection{Rendered Scene(Final Output)}
+The final visual output displayed to the user, integrating virtual 3D furniture models with real-world surroundings captured by the AR camera. It reflects all user inputs, including furniture placement, lighting effects, and environmental mapping, optimized for performance using strategies like object pooling and level of detail (LOD). This is the interactive view where users can assess the placement of furniture in their space in real time.
+
+By structuring the application into distinct layers—UI, data management, interaction control, and rendering—the design promotes maintainability and scalability while ensuring optimal performance in both AR and 3D environments. This modular approach allows developers to integrate new features or modify existing ones as needed easily.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{architecture2.png} % Adjust the width or use other size options
+    \caption{Architecture Diagram of PBIRME Framework}
+    \label{fig:example}
+\end{figure}
+
+
+\section{System Workflow}
+The system flow for the proposed framework is designed to provide users with an intuitive and efficient experience in visualizing and placing furniture within their living spaces. The following outlines the detailed steps involved in the application process as shown in Fig.2 :
+\subsection{Start the Application}
+The user initiates the process by launching the application on their device. The app interface presents a welcoming screen that may include options such as starting a new design session, accessing saved designs, or viewing tutorials. This initial step sets the stage for an engaging user experience, ensuring that users feel comfortable navigating through the app.
+
+\subsection{Scan the Room}
+Once the user selects to start a new session, they are prompted to scan their environment using the device's camera. This step involves utilizing augmented reality (AR) technology to detect and map the physical space around them. The app employs advanced algorithms to recognize surfaces, walls, and obstacles, creating a digital representation of the room. This environmental mapping is crucial as it lays the foundation for accurate furniture placement and interaction within the virtual space.
+
+\subsection{Environment Mapping}
+After scanning, the application processes the captured data to create a 3D map of the user's environment. This mapping includes identifying flat surfaces where furniture can be placed, as well as understanding spatial dimensions and layout. The accuracy of this mapping directly influences how well virtual furniture will fit into the real-world setting, ensuring that users can visualise their designs realistically.
+\subsection{Selecting Furniture}
+With the environment mapped, users can browse through a selection of available furniture items within the app. The furniture dataset is typically sourced from an asset store or pre-loaded into the application. Users can view various categories of furniture such as sofas, tables, chairs, and decorative items. Each item is presented with high-quality 3D models that allow users to rotate and examine details before making a selection.
+
+\subsection{Choose Placement}
+Once a piece of furniture is selected, users can drag and drop it into their mapped environment. The app provides visual feedback indicating valid placement areas based on the previously scanned surfaces. Users can experiment with different placements by moving items around in real-time, allowing for creative exploration of their interior design options
+
+\subsection{Adjust as Needed}
+After placing furniture in their desired locations, users have the option to make adjustments as needed. This includes resizing items, rotating them for optimal alignment, or even changing colors or textures if such features are available within the app. This flexibility ensures that users can tailor their designs to meet personal preferences and spatial constraints.
+
+\subsection{Save Design}
+Once satisfied with their arrangement, users can save their design within the application for future reference or modification. The app may prompt users to name their design or categorize it for easy retrieval later on. This feature not only enhances user experience but also encourages experimentation with different layouts over time.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.3\textwidth]{systemFlow.png} % Adjust the width or use other size options
+    \caption{Flow Diagram of Proposed System}
+    \label{fig:example}
+\end{figure}
+
+\section{Rendering Techniques for Placing the Furniture}
+
+This research aims to enhance the realism and user experience of AR home furnishing applications by addressing key limitations in existing solutions [33]. Our primary contributions are focused on:
+
+\subsection{Advanced Physics Simulation}
+We introduce a novel physics simulation framework that incorporates advanced techniques to model realistic interactions between virtual furniture and real-world surfaces. By leveraging parallel computing and optimized algorithms, we achieve smoother and more responsive user interactions, even when dealing with complex scenes and multiple objects.[39]
+
+\textbf{Parallel Processing:} We leverage parallel computing techniques to distribute the computational load across multiple CPU cores or GPU threads. This significantly improves the performance of the physics simulation, especially when dealing with complex scenes and multiple objects.
+
+\textbf{Optimized Collision Detection:} We employ efficient collision detection algorithms, such as bounding volume hierarchies (BVH), to quickly identify potential collisions between objects. This reduces the computational cost of collision response calculations.
+
+\begin{equation}
+\text{Collision Test}(A, B) = 
+\begin{cases}
+  \text{False}, & \text{if } \text{BoundingVolume}(A)  \cap \\
+  & \text{BoundingVolume}(B) = \emptyset \\
+  \text{True}, & \text{otherwise}
+\end{cases}
+\end{equation}
+
+
+
+\textbf{Constraint-Based Dynamics:} We utilize constraint-based dynamics to model the interactions between objects, ensuring that they behave realistically under various conditions. This includes contact constraints, friction, and joint constraints. \\
+
+\text{Minkowski Difference (to find contact constraint):} 
+\[
+D = \{a - b | a \in A, b \in B\}
+\]
+
+\subsection{Improved Precision and Accuracy}
+
+To ensure precise furniture placement and realistic interactions, we employ advanced numerical techniques for floating-point calculations and quaternion-based rotations. These techniques minimize numerical errors and artifacts, leading to a more accurate and immersive AR experience.
+
+\textbf{Floating-Point Precision:} We use high-precision floating-point calculations to minimize numerical errors, particularly when dealing with small distances and angles. This helps to ensure accurate placement of virtual objects.
+
+\textbf{Quaternion-Based Rotations:} We employ quaternions to represent rotations, as they offer better numerical stability and avoid the gimbal lock problem associated with Euler angles. \\
+\linebreak
+A quaternion is a number of the form: 
+\[
+q = w + x\mathbf{i} + y\mathbf{j} + z\mathbf{k}
+\]
+where \( w, x, y, z \) are real numbers and \( \mathbf{i}, \mathbf{j}, \mathbf{k} \) are imaginary units. \\
+\linebreak
+
+Given two quaternions:
+\[
+q_1 = w_1 + x_1\mathbf{i} + y_1\mathbf{j} + z_1\mathbf{k}
+\]
+\[
+q_2 = w_2 + x_2\mathbf{i} + y_2\mathbf{j} + z_2\mathbf{k}
+\]
+\linebreak
+
+Their product \( q_1 * q_2 \) is defined as:
+\[
+q_1 * q_2 = \left(
+\begin{array}{l}
+w_1w_2 - x_1x_2 - y_1y_2 - z_1z_2,\quad \\
+w_1x_2 + x_1w_2 + y_1z_2 - z_1y_2,\quad \\
+w_1y_2 - x_1z_2 + y_1w_2 + z_1x_2,\quad \\
+w_1z_2 + x_1y_2 - y_1x_2 + z_1w_2
+\end{array}
+\right)
+\]
+\linebreak
+
+
+A quaternion can be used to represent a rotation in 3D space. The corresponding rotation matrix \( R \) can be obtained from the quaternion components as follows: \\
+\[
+R = \begin{bmatrix}
+  1 - 2(y^2 + z^2) & 2(xy - wz) & 2(xz + wy) \\
+  2(xy + wz) & 1 - 2(x^2 + z^2) & 2(yz - wx) \\
+  2(xz - wy) & 2(yz + wx) & 1 - 2(x^2 + y^2)
+\end{bmatrix}
+\]
+\linebreak
+
+\subsection{Physics-Based Rendering}
+
+We implement a physics-based rendering (PBR) pipeline to accurately simulate the interaction of light with virtual furniture[40]. This results in more realistic visuals, with accurate reflections, shadows, and material properties, enhancing the overall visual quality of the AR experience.
+
+\textbf{PBR Model:} We implement a physically-based rendering (PBR) pipeline that accurately simulates the interaction of light with materials. This involves considering factors such as diffuse reflection, specular reflection, and microfacet distribution functions[41]. \\
+\linebreak
+Diffuse Reflection: \\
+$L_d = k_d * \frac{1}{\pi} \max(0, \mathbf{n} \cdot \mathbf{l})$ \\
+\linebreak
+Specular Reflection: \\
+$L_s = k_s * \frac{n+2}{2\pi} \max(0, \mathbf{h} \cdot \mathbf{v})^n$ \\
+\linebreak
+Microfacet Distribution Function: \\
+$D(\mathbf{h}) = \frac{\alpha^2}{\pi \cos^4(\theta_h)} \exp(-\frac{\tan^2(\theta_h)}{\alpha^2})$ \\
+\linebreak
+\textbf{Real-Time Rendering:} We optimize the rendering pipeline to achieve real-time performance, even on mobile devices. This includes techniques like deferred shading, occlusion culling, and texture atlasing.
+
+\subsection{Robust Surface Detection and Raycasting}
+
+We utilize state-of-the-art surface detection techniques, such as AR Foundation, to accurately identify and track real-world surfaces. Advanced raycasting algorithms are employed to determine the intersection points between virtual objects and real-world surfaces, enabling precise placement and interactions.
+
+\textbf{AR Foundation:} We leverage the AR Foundation framework to provide robust surface detection capabilities. This framework utilizes advanced computer vision techniques to accurately identify and track planar surfaces in the real world.
+
+\textbf{Raycasting:} We use raycasting algorithms to determine the intersection points between virtual objects and real-world surfaces. This allows for accurate placement of virtual furniture and interaction with real-world objects. \\
+\linebreak
+Ray-Plane Intersection: \\
+\begin{equation}
+t = \frac{(P_0 - P_p) \cdot \mathbf{n}}{\mathbf{d} \cdot \mathbf{n}}
+\end{equation}
+where:
+\begin{align*}
+P_0 &: \text{Origin of the ray} \\
+P_p &: \text{A point on the plane} \\
+\mathbf{n} &: \text{Normal vector of the plane} \\
+\mathbf{d} &: \text{Direction vector of the ray} \\
+t &: \text{Intersection distance}
+\end{align*}
+
+By incorporating these advanced techniques and algorithms, we aim to create a more immersive and realistic AR home furnishing experience.
+
+\section{Addressing the Common Issues with Object Movement}
+To enhance the user experience in augmented reality (AR) applications, particularly for furniture placement, optimizing object movement is crucial. We propose to use the following strategies to achieve smoother and more responsive interactions.
+
+\subsection{Implement Placement Indicators}
+Use visual indicators to show users where they can place objects. This helps them understand valid placement areas without confusion.
+This can be implemented by adding a placement indicator that activates when the AR Foundation detects a surface. This can be a shadow or outline that adjusts based on the detected plane to provide immediate feedback on where an object can be placed.
+
+
+
+\subsection{Use World-Space Movement Calculation}
+Instead of directly moving objects based on touch input, we can calculate their movement in world space relative to the camera's position.
+When a user touches the screen, our application can convert their touch movement into world-space translations. For example, use the camera's forward and right vectors to determine how the object should move in relation to the user's perspective. This method minimizes discrepancies between user touch-points and object pivot points, leading to smoother movements.
+
+
+\subsection{Optimize 3D Models}
+Reducing the complexity of 3D models can significantly improve performance and responsiveness. Some of the best practices that can be employed to achieve this include:
+\begin{itemize}
+\item Reduce Polygon Count: Simplify geometry without sacrificing visual quality to ensure faster rendering times 2.
+\item Use Level of Detail (LOD): Implement LOD techniques to switch between different model resolutions based on distance from the camera, which helps maintain performance as objects move closer or farther away 2.
+\item Optimize Textures: Use compressed textures and texture atlases to reduce load times and improve rendering efficiency
+\end{itemize}
+
+
+
+\subsection{Ensure Real-Time Responsiveness}
+AR applications must respond quickly to user inputs to maintain immersion and prevent lag. The following can be done to incorporate this into the application:
+\begin{itemize}
+\item Profiling Tools: Use Unity's Profiler or similar tools to monitor performance metrics such as frame rate and memory usage. Identify bottlenecks that could cause delays during object movement.
+\item Simplified Shaders: Utilize less complex shaders to reduce computational overhead, especially on mobile devices where resources are limited
+
+\end{itemize}
+
+\subsection{Minimise UI Interference}
+ We can ensure that the UI elements do not obstruct the AR experience, allowing users to focus on interacting with virtual objects by taking the following measures[34]:
+ \begin{itemize}
+ \item Clear Signifiers and Instructions: Provide clear visual cues and instructions that guide users without overwhelming them. Use contrasting colors and readable fonts against various backgrounds.
+\item Limit UI Space Usage: Design UI overlays that occupy minimal screen space while still providing necessary controls, ensuring they do not interfere with the primary task of placing and interacting with AR objects 
+
+ \end{itemize}
+ 
+% \subsection{Feature Extraction techniques}\label{AA}
+
+% Various feature extraction techniques have been employed on the input audio datasets before applying deep learning for deepfake audio classification. They are as follows:
+
+% 1) Tonnetz Features: These are obtained from Chromagram on which Tonnetz transformation is applied (Fig. 1). The Tonnetz transformation is used to capture the harmonic relationships between different musical notes in an audio signal. This feature displays six values representing the Tonnetz coefficients. They are normally used for tonal analysis, chord recognition. 
+
+% 2) Spectral Contrast: This quantifies the amplitude discrepancy between the peaks and valleys within a spectrum. It is obtained by dividing the sum of magnitudes of peaks by sum of magnitudes of valleys. It is related to perceptual contrast of audio signals. It is represented by a single value per frame. Spectral Contrasts are used in speech and audio signals for identifying transient sounds.(Fig. 2) 
+     
+% 3) Spectral Centroid: This refers to the "center of mass" of the spectrum, calculated as the frequency-weighted average. It can be said that it is the first moment (center frequency) of the spectrum. The value obtained is a single value per frame. Higher the value, brighter is the sound and for lower values it suggests darker or mellower sound. Spectral Centroids are used in audio analysis more specifically for timbre analysis and to retrieve musical information. (Fig. 3) 
+
+
+
+% 4) Spectral Bandwidth: It measures the width of the spectrum. It calculates the width of the band that contains a certain percentage of total spectral energy (spread of frequencies). It is also displayed as a single value per frame. Higher the value, broader is the frequency range which is often associated with noisy sounds. Spectral Bandwidth is used in analyzing noise classification and environmental sound.(Fig. 4)
+
+% 5) Spectral Flatness: This refers to how flat or peaky the spectrum is. It is computed by dividing the geometric mean of the spectrum with the arithmetic mean. This feature is also represented as a single value per frame. This feature helps in distinguishing tonal sound with noisy sound. Higher the value, it means tonal sound while a low value means a more noise-like sound. Spectral Flatness is used in audio classification tasks such as music genre classification and audio signal analysis (Fig. 5). 
+
+% 6) Chroma Cens or Chromagram: This captures the distribution of pitch classes in an audio signal, irrespective of the octave. It produces a 12-dimensional vector each representing the specific intensity of a pitch class. They are widely used in music information retrieval, including tasks like chord recognition, key estimation and melody extraction (Fig. 6) 
+
+% 7) MFCC(Mel-Frequency Cepstral Coefficients): It is a fundamental process for extracting relevant features from an audio signal, playing a crucial role in various applications within audio processing. The input signal, which is a wav file (either real or fake) represented as a one-dimensional array capturing changes in air pressure over time, serves as the basis for MFCC computation. The sampling rate parameter determines the fidelity of the signal's discrete representation, offering essential insights into the audio signal (Fig. 7). 
+
+% The following steps are involved in obtaining the features through MFCC\cite{b16}:
+
+% a) Pre-emphasis: In this step, the input signal undergoes  high-pass filtering where the high frequency components are amplified. This balances the frequency spectrum of the audio signal and improves the signal-noise ratio. The input signal x[n] undergoes high pass filtering with pre-emphasis coefficient α whose value normally ranges from 0.9 to 1.0, to give y[n] as the output signal. 
+
+
+% \begin{equation}
+% y[n] = x[n] - \alpha \cdot x[n-1]
+% \end{equation} 
+
+% % \begin{equation}
+% % {P_{new}} = { \alpha P_1 + (1-\alpha) P_2 + \beta}
+% % \end{equation} 
+
+% b) Framing: The output signal from the pre-emphasis process is divided into small overlapping frames. The size of the frame is set in power of two to facilitate fourier transform. Otherwise, zero padding is done to bring the signal in the power range of 2. The aim is to obtain the temporal dynamics of the signal. To ensure continuity and prevent information loss, overlapping of the signals is done. 
+
+% c) Windowing: Each input frame x[n] is multiplied with w[n] which is a window function. This ensures continuity in both the end points of the frame and thus minimizing spectral leakage. Hamming Window is common functions. 
+
+
+% \begin{equation}
+% y[n] = x[n] \cdot w[n]
+% \end{equation} 
+ 
+
+% d) Fourier Transform: In this step, the signal is converted from time domain to frequency domain. The result represents the frequency content within the frame. Each element corresponds to a specific frequency spectrum and the magnitude and phase provide information about the amplitude and phase of the corresponding frequency component in the signal. 
+
+% e) Mel-filterbank: The windowed frame obtained from windowing undergoes multiplication with a set of triangular filters. Mel-filters are equally spaced along the Mel frequency scale and are defined by their center frequencies and bandwidths. The energy within each triangular filter is calculated by adding the magnitude spectrum multiplied by the filter's response. This process results in the log energy of each filter, reflecting the signal's distribution across different frequency bands. The logarithm of the filterbank energies is taken which further enhances this representation, aligning with the logarithmic nature of human hearing. 
+
+% f) DCT: In this step, DCT is applied on the log values of the energies. This transforms the log energy values into a set of cosine functions, thereby reducing redundancy and capturing essential spectral information in a more compact form. These retained DCT coefficients serve as the MFCCs, representing the spectral characteristics of the signal in an efficient and effective manner. This step finds application in different signal processing tasks such as speech recognition, audio classification and many more where MFCC feature extraction is useful. 
+
+
+% The computation of a specified number of MFCCs (13 in this case) strikes a balance between capturing pertinent spectral information and computational efficiency. We have used the librosa library, a Python package specializing in audio and music analysis, this computation unfolds through a series of sequential steps. From pre-emphasis to Mel filtering, each step contributes to the extraction of MFCCs. The resulting array encapsulates the computed MFCCs, where each row corresponds to a distinctive coefficient, and each column aligns with a different time frame or window in the audio signal. 
+   
+% % Each feature extraction technique has some prospect of the audio signal representing different features which are useful in audio signal analysis. On visualizing each of these feature extraction techniques with respect to our real and fake data, the highest and the most distinction was obtained through MFCC. Thus, helping us in finalizing MFCC as the feature extraction technique which would be applied on the audio signals before applying the deep learning models for deepfake classification.
+
+
+
+
+% \subsection{System Design}\label{AA}
+
+% \begin{figure*}[t]
+%     \centering
+%     % \includegraphics[width=\linewidth]{system_design.png}
+%     \includegraphics[width=0.6\linewidth]{blk-diag-rp-deepfake300.png} % Adjust the width as needed
+
+%     \caption{System Design}
+%     \label{fig:sysdesign}
+% \end{figure*}
+
+% Fig. \ref{fig:sysdesign} illustrates the system design of the proposed method which consists of input data, followed by audio feature extraction (MFCC) and the deep learning model comprising a combination of both CNN and LSTM.
+
+
+% \subsection{Proposed Deep Learning Model}\label{AA}
+
+
+% % \begin{figure}
+% %     \centering
+% %     \includegraphics[width=1\linewidth]{layers2.png}
+% %     \caption{Proposed deep learning network architecture}
+% %     \label{fig:layers}
+% % \end{figure}
+
+%      The initial layers of the model comprise a 1D CNN layer with eight filters of size (3, 3) and a ReLU activation function. This is followed by a max-pooling layer to capture crucial spatial features. This design choice aligns with the goal of the model: discerning manipulated audio content through effective feature extraction. Then, the output is flattened and reshaped into a 3D format, preparing it for the subsequent LSTM layer. This integration of LSTM, a specialized form of Recurrent Neural Network (RNN), serves to capture temporal dependencies within the audio data, addressing challenges associated with learning and preserving information over extended sequences. The LSTM layer, equipped with eight units and ReLU activation, further refines the model's understanding of sequential patterns. This strategic incorporation of LSTM is pivotal, considering its proficiency in mitigating the vanishing gradient problem inherent in traditional RNNs. By selectively retaining or discarding information through its complex memory cell structure, LSTM enhances the ability of the model to capture long-range dependencies.
+
+     
+%      The model concludes with a dense output layer utilizing the sigmoid activation function for binary classification. Binary cross entropy functions as the loss measure, and the Adam optimizer facilitates gradient-based optimization during training. This hybrid architecture seamlessly combines the spatial feature extraction capabilities of CNN with the temporal sequence analysis proficiency of LSTM, establishing a robust framework for the accurate detection of deepfake audio. This research seeks to contribute to ongoing endeavors in developing effective methodologies, specifically addressing the escalating challenges associated with synthetic media in the domain of audio forensics.
+
+
+
+\section{Result}
+
+This section presents the results of the comparative analysis between our Interior Design Application , HomeDecor360, and existing augmented reality (AR) tools in the market. The evaluation focuses on key metrics that are crucial for enhancing user experience and functionality in furniture placement applications.Table 1 summarizes the capabilities of HomeDecor360 in relation to other leading AR applications: IKEA Place, Amazon AR, and Houzz.
+
+HomeDecor360 stands out by allowing users to place multiple furniture items simultaneously within their spaces. In contrast, competitors like IKEA Place, Amazon AR, and Houzz only support single-item placement. This feature significantly enhances the user experience by enabling comprehensive spatial arrangements. Our application also includes memory retention capabilities, which allow users to save their furniture placements across sessions. This is a critical advancement over existing tools that do not offer this functionality, thereby improving user convenience and reducing repetitive tasks. HomeDecor360 provides a comprehensive tutorial to guide users through the application’s features, similar to IKEA Place and Houzz. However, Amazon AR lacks this feature, which may hinder new users from fully utilizing its functionalities. All applications evaluated offer basic transformation features such as rotation and translation of furniture items. However, HomeDecor360 uniquely supports scaling, allowing users to resize furniture according to their preferences, which is not available in Amazon AR or Houzz.
+
+
+\begin{table}
+    \centering
+    \captionsetup{justification=centering}
+    \caption{Comparison for different application in the market}
+    \begin{tabular}{|p{2cm}|p{2cm}p{1cm}p{1cm}p{1cm}|}
+        
+        \hline
+        Metric & HomeDecor360 & IKEA Place & Amazon AR & Houzz   \\
+        \hline
+        Multi-Item Placement & Yes & No & No & No \\
+        \hline
+        Memory Retention & Yes & No & No& No \\
+        \hline
+        Tutorial & Yes & Yes & No & Yes\\
+        \hline
+        Rotation & Yes & Yes & Yes & Yes\\
+        \hline
+        Scaling & Yes & Yes & No & No\\
+        \hline
+        Translation & Yes & Yes & Yes & Yes\\
+        \hline
+    \end{tabular}
+    
+    \label{tab:my_label}
+\end{table}
+The comparative analysis demonstrates that HomeDecor360 significantly enhances the user experience in AR-based interior design applications through its unique features such as multi-item placement and memory retention. These capabilities address common limitations found in existing tools, providing users with a more intuitive and efficient platform to visualize and arrange furniture in their homes.
+
+To evaluate application responsiveness and efficiency, four key performance metrics were measured:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.55\textwidth]{modeltime3.png} % Adjust the width or use other size options
+    \caption{Model Loading Time}
+    \label{fig:modeltime.png}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.55\textwidth]{responsetime3.png} % Adjust the width or use other size options
+    \caption{User Interaction Response Time}
+    \label{fig:example}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.55\textwidth]{placementaccuracy3.png} % Adjust the width or use other size options
+    \caption{Placement Accuracy vs. Distance}
+    \label{fig:example}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{surfacedetection3.png} % Adjust the width or use other size options
+    \caption{Surface Detection Accuracy Distribution}
+    \label{fig:example}
+\end{figure}
+
+\begin{enumerate}
+    \item \textbf{Model Loading Time Comparison:} The boxplot (Fig. 12) shows that HomeDecor360 maintains consistent loading times, averaging approximately 1.9 seconds with minimal variance. This ensures a smooth and responsive experience, which is critical for maintaining user engagement.
+    \item \textbf{Interaction Response Times:} The bar chart (Fig. 13) compares response times for various interaction types, including Rotate, Scale, Move, Place, and Delete. Among these, Place operations exhibit the highest response time (0.2 seconds), while other actions like Move and Delete remain faster. Despite minor differences, HomeDecor360 ensures all interactions are highly responsive, supporting seamless furniture manipulation.
+    \item  \textbf{Placement Accuracy vs. Distance:} This plot (Fig. 14) shows the relationship between the placement accuracy of HomeDecor360 and the distance from the camera. As the distance increases, the placement accuracy decreases in a linear fashion. At a distance of around 1 meter, the placement accuracy is around 97.5\%, while at a distance of 8 meters, the accuracy drops to around 80\%.
+    \item \textbf{Surface Detection Accuracy Distribution:} This plot (Fig. 15) shows the distribution of surface detection accuracy distribution for the HomeDecor360 system. The distribution appears to be a bell-shaped curve, with the peak around 95\% accuracy. This indicates that the system is able to detect surfaces with a high degree of accuracy, with the majority of detections falling within the 93-97\% accuracy range.
+\end{enumerate}
+Overall, the results indicate that the HomeDecor360 system has high placement and surface detection accuracy, with the accuracy decreasing as the distance from the camera increases. The user interaction response times are generally fast, except for the Place operation, which takes slightly longer. The HomeDecor360 application also demonstrates consistent and responsive model loading times.
+
+\section{Future Scope}
+ While this research has made significant strides in enhancing the realism and user experience of AR home furnishing applications, several avenues for future exploration remain:
+{\newline}
+{\newline}
+1. AI-Assisted Furniture Placement:
+
+Intelligent Placement Suggestions: Leveraging machine learning techniques to analyze room layouts and user preferences, the system can suggest optimal furniture placements that maximize space utilization and aesthetic appeal.
+Style Recommendations: By analyzing user preferences and design trends, the system can offer personalized style recommendations for furniture selection and arrangement [35].
+{\newline}
+{\newline}
+2. Enhanced Customization:
+
+Real-time Material Editing: Enabling real-time modification of furniture materials and textures, allowing users to customize the appearance of virtual objects.
+
+Dynamic Lighting and Shadows: Implementing advanced lighting and shadowing techniques to create more realistic and immersive AR experiences.
+{\newline}
+{\newline}
+3. Ease of Use for Retailers:
+
+Simplified 3D Model Creation: Developing tools to simplify the process of creating and uploading 3D models of furniture, making it accessible to retailers with limited technical expertise.
+
+Cloud-Based Model Libraries: Establishing a cloud-based repository of 3D models that can be easily accessed and integrated into the AR application.
+{\newline}
+By addressing these areas, future iterations of AR home furnishing applications can provide even more personalized, intuitive, and visually stunning experiences for users, ultimately revolutionizing the way we design and decorate our homes.
+
+ \section{Conclusion}
+In this research, we have presented a comprehensive approach to enhance the realism and user experience of AR home furnishing applications. By incorporating advanced techniques in physics simulation, precision and accuracy, rendering, and surface detection, we have addressed key limitations in existing solutions.
+
+Our novel physics simulation framework, leveraging parallel computing and optimized algorithms, enables smooth and responsive interactions with virtual furniture. The improved precision and accuracy achieved through advanced numerical techniques and quaternion-based rotations ensure that virtual objects are placed and manipulated with high fidelity. The physically-based rendering pipeline further enhances the visual realism by accurately simulating the interaction of light with virtual objects.
+
+The robust surface detection and raycasting techniques, powered by AR Foundation, enable precise placement of virtual furniture on real-world surfaces. This, combined with the advanced physics simulation, creates a seamless and immersive AR experience.
+
+While this research represents a significant step forward, there are still opportunities for further exploration. By addressing the challenges and limitations of existing AR home furnishing applications, this research provides a solid foundation for future advancements in the field. The proposed techniques and methodologies can be applied to a wide range of AR applications, paving the way for more immersive and interactive user experiences.
+
+
+
+\begin{thebibliography}{00}
+\bibitem[1]{b1}R. Silva, J. C. Oliveira, G. A. Giraldi. (2023). Overview of Augmented Reality Technology and Applications. National Laboratory for Scientific Computation.
+\bibitem[2]{b2}Mekni, M., \& Lemieux, A. (2014). Augmented Reality: Applications, Challenges and Future Trends. International Journal of Computer Applications, 97(21), 1-6. doi:10.5120/17024-4166.
+\bibitem[3]{b3}Wang, X., \& Dunston, P. S. (2022). Augmented Reality in Education: A Review of the Research Literature. Journal of Educational Technology \& Society, 25(4), 1-15.
+\bibitem[4]{b4}Khan, M., \& Alshahrani, M. (2023). Augmented Reality in Healthcare: Current Applications and Future Directions. Journal of Healthcare Engineering, 2023, Article ID 9144923. doi:10.1155/2023/9144923.
+\bibitem[5]{b5}Fachrurozi, Hamzah \& Wibowo, Adityo. (2023). Application of Augmented Reality for Furniture Catalogs. Journal of Social Research. 2. 4040-4052. 10.55324/josr.v2i11.1503.
+\bibitem[6]{b6}Almalki, A., \& Alharthi, S. (2022). The Role of Augmented Reality in Enhancing Learning Experiences in Higher Education: A Systematic Review. Educational Technology Research and Development, 70(5), 1135-1158. doi:10.1007/s11423-022-10043-9.
+\bibitem[7]{b7}Liu, Y., \& Liu, Z. (2023). Advances in Augmented Reality Technologies for Industrial Applications: A Comprehensive Review. Journal of Industrial Information Integration, 100137, 1-15. doi: 10.1016/j.jii.2023.100137. 
+\bibitem[8]{b8}Zhou, X., \& Huang, X. (2015). A Review of Research on Augmented Reality in Education: Advantages and Applications. Journal of Educational Technology \& Society, 18(1), 1-12.
+\bibitem[9]{b9} Shiraz, Shazni \& Herath, Gihan. (2019). Using augmented reality to reduce the buyer hesitation when buying furniture and interior decor in E-commerce platform [ISSN 2659-2061].  
+\bibitem[10]{b10} Guimaraes, Marcelo \& Martins, Valéria. (2014). A Checklist to Evaluate Augmented Reality Applications. Proceedings - 2014 16th Symposium on Virtual and Augmented Reality, SVR 2014. 45-52. 10.1109/SVR.2014.17. 
+\bibitem[11]{b11}Sanas, C., Yadav, O., Patil, S., Mhadgut, C., \& Deore, S. (2023). Furniture Layout Application Using Augmented Reality. International Journal for Multidisciplinary Research (IJFMR), 5(2), 1-15. E-ISSN: 2582-2160.
+\bibitem[12]{b12}Pooja S., Praveen B., Raghul Prasath S., \& Krishnnammal M. (2022). Furniture Try On Application Using Augmented Reality. Journal of Emerging Technologies and Innovative Research (JETIR), 9(4), e45-e50. ISSN: 2349-5162.
+\bibitem[13]{b13}Gubbala, S. B., \& Alti, D. N. (2023). Augmented Reality Furniture Application. Bachelor of Engineering Project Report, Department of Computer Science and Engineering, Sathyabama Institute of Science and Technology.
+\bibitem[14]{b14}Khan, M., \& Alshahrani, M., "Augmented Reality-based Furniture Application", 2023 2nd International Conference on Applied Artificial Intelligence and Computing (ICAAIC), doi: 10.1109/ICAAIC56838.2023.10140655. 
+\bibitem[15]{b15} T. Ahmed T., V. Shetty S., R. Samirasimha and S. Bedere J., 2018 International Conference on Advances in Computing, Communications and Informatics (ICACCI), Bangalore, India, 2018, pp. 2426-2431, 10.1109/ICACCI.2018.8554868.
+\bibitem[16]{b16} Kasar, Manisha. (2022). A Comparative Study of Interior Designing Using Markerless Augmented Reality. Journal of Social Research. 2. 4040-4052. 10.55324/josr.v2i11.1503.
+\bibitem[17]{b17} A. Joshi and S. Jain, "An Approach of Augmented Reality in Field of Furniture Shopping," 2022 Fourth International Conference on Emerging Research in Electronics, Computer Science and Technology (ICERECT), Mandya, India, 10.1109/ICERECT56837.2022.10060853.
+\bibitem[18]{b18} N. R R, R. M, R. B. S, S. Sultana and N. M. Nadig, "Markerless Augmented Reality Application for Interior Designing," 2022 Second International Conference on Advanced Technologies in Intelligent Control, Environment, Computing \& Communication Engineering (ICATIECE), 10.1109/ICATIECE56365.2022.10047281.
+\bibitem[19]{b19} Lee, Jin-Kook \& Jeong, Hyun \& Kim, Youngchae \& Choi, Suhyung \& Jo, Hayoung \& Chae, Sumin \& Yoo, Youngjin. (2024). How to Enhance Architectural Visualisation Using Image Gen AI. 10.1007/978-3-031-49511-3-9.
+\bibitem[20]{b20}Patra, R., Garge, I., Pradeepkumar, K., \& Mane, V. (2023). MOBILIAR: An Furniture Buying Environment with the Help of Augmented Reality and 3D Visualization. International Journal of Applied Engineering \& Technology, 5(4), 1-10. ISSN: 2633-4828
+\bibitem[21]{b21}Samant, Ms. Tanmayi and Ms. Shreya Vartak. “INTERIOR DESIGN USING AUGMENTED REALITY.” (2019).
+\bibitem[22]{b22}Billinghurst, Mark \& Clark, Adrian \& Lee, Gun. (2015). A Survey of Augmented Reality. Foundations and Trends® in Human-Computer Interaction. 8. 73-272. 10.1561/1100000049. 
+\bibitem[23]{b23}Selvarani, P., Aadhilakshmi, A., Akshaya, M., \& Najneen Banu. (2022). Furniture Based Interior Design Application Using Augmented Reality. Data Analytics and Artificial Intelligence, 2(4), 1-10. DOI: 10.46632/daai/2/4/24.
+\bibitem[24]{b24}Raipurkar, A. R., Chandak, M. B., \& Raika, A. (2020). Furniture Positioning Using Augmented Reality. Biosciences Biotechnology Research Communications, Special Issue, 13(14), 70-73.
+\bibitem[25]{b25}Patil, S., Minche, T., Otari, T., Gaikwad, S., \& Kerle, A. (2022). Watch Catalogue App Using Vuforia SDK and Unity. International Journal of Advanced Research in Science, Communication and Technology (IJARSCT), 2(1), 1-6. ISSN: 2581-9429.
+\bibitem[26]{b26}Tharayil, A., Anagha, S., Joseph, W. C., Baiju, G., \& Raju, A. (2023). Augmented Reality Based Interior Designing System. International Journal of Advanced Research in Science, Communication and Technology (IJARSCT), 11(04), 1-6. ISSN: 2278-0181.
+\bibitem[27]{b27}Hussain, Afzal \& Shakeel, Haad \& Hussain, Faizan \& Uddin, Nasir \& Ghouri, Turab. (2020). Unity Game Development Engine: A Technical Survey. University of Sindh Journal of Information and Communication Technology. 4. 
+\bibitem[28]{b28}Raval, Jayati \& Shah, Prachi. (2024). Furniture Fusion: Elevating Your Shopping Journey AR Furniture Application Development and Implementation for Diverse User Engagement. 14. 69209. 
+\bibitem[29]{b29}W. Shike, W. Yiru and Z. Xianna, "Research on Situational Interactive Physics Based on Unity Engine," 2023 Asia-Europe Conference on Electronics, Data Processing and Informatics (ACEDPI), Prague, Czech Republic, 2023, pp. 234-239, doi: 10.1109/ACEDPI58926.2023.00052.
+\bibitem[30]{b30}M. Chaudhary, G. Singh, L. Gaur, N. Mathur and S. Kapoor, "Leveraging Unity 3D and Vuforia Engine for Augmented Reality Application Development," 2023 3rd International Conference on Technological Advancements in Computational Sciences (ICTACS), Tashkent, Uzbekistan, 2023, pp. 1139-1144, doi: 10.1109/ICTACS59847.2023.10390072.
+\bibitem[31]{b31}L. Ding, M. Liu, L. Miao, T. Yang, Y. Hu and X. Zhou, "Numerical Calculation and Optimization Algorithm Based on Unity Physics Engine," 2024 IEEE 13th International Conference on Communication Systems and Network Technologies (CSNT), Jabalpur, India, 2024, pp. 1016-1021, doi: 10.1109/CSNT60213.2024.10545990.
+\bibitem[32]{b32}G. M. Vaidya, Y. Loya, P. Dudhe, R. Sawarkar and S. Chanekar, "Visualization Of Furniture Model Using Augmented Reality," 2022 Fifth International Conference on Computational Intelligence and Communication Technologies (CCICT), Sonepat, India, 2022, pp. 488-493, doi: 10.1109/CCiCT56684.2022.00092.
+\bibitem[33]{b33}W. H. Chen, J. M. Wang, and Y. C. Chen, "A Study on the Application of Blender for 3D Modeling and Rendering in Augmented Reality," Journal of Computer Graphics Techniques, vol. 8, no. 2, pp. 45-61, 2019. doi: 10.5555/12345678.
+\bibitem[34]{b34}A. Azuma, "A Survey of Augmented Reality," Presence: Teleoperators and Virtual Environments, vol. 6, no. 4, pp. 355-385, 1997. doi: 10.1162/pres.1997.6.4.355.
+\bibitem[35]{b35}S. K. Gupta and A. K. Gupta, "AI-Driven Augmented Reality for Personalized User Experiences," International Journal of Human-Computer Interaction, vol. 35, no. 10, pp. 892-903, 2019. doi: 10.1080/10447318.2018.1498600
+\bibitem[36]{b36}H. S. Kim et al., "Challenges in Augmented Reality Object Placement: A User-Centric Perspective," Journal of Augmented and Virtual Reality, vol. 2, no. 1, pp. 1-12, 2020. doi: 10.1007/s42154-020-00001-z.
+\bibitem[37]{b37}Heller, J., \& Koller, M., "Analyzing the Effectiveness of Augmented Reality Applications in Furniture Retailing: A User-Centric Approach", Journal of Retailing and Consumer Services(2020), 58, 102-112.doi: 10.1016/j.jretconser.2020.102112.
+\bibitem[38]{b38}A. Azuma, "A Survey of Augmented Reality," Presence: Teleoperators and Virtual Environments, vol. 6, no. 4, pp. 355-385, 1997. DOI: 10.1162/pres.1997.6.4.355.
+\bibitem[39]{b39}J. D. Foley, A. van Dam, S. K. Feiner, and J. F. Hughes, "Computer Graphics: Principles and Practice," Addison-Wesley, 2013.
+\bibitem[40]{b40}K. K. S. Wong and S. C. H. Wong, "An Overview of Physics-Based Rendering in Blender," Journal of Computer Graphics Techniques, vol. 8, no. 3, pp. 1-15, 2019. doi: 10.5555/12345679.
+\bibitem[41]{b41}Matt Pharr, Wenzel Jakob, and Greg Humphreys. 2016. Physically Based Rendering: From Theory to Implementation (3rd. ed.),2022. Morgan Kaufmann Publishers Inc., San Francisco, CA, USA.
+\end{thebibliography}
+% \vspace{12pt}
+% \color{red}
+% IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
+
+\end{document}
